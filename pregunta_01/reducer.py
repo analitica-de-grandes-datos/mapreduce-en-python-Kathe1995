@@ -3,21 +3,23 @@
 #
 import sys
 
-c = None
-total = 0
+if __name__ == '__main__':
 
-for i in sys.stdin:
+    c = None
+    total = 0
+
+    for i in sys.stdin:
     
-    key, value = i.split("\t") 
-    value = int(value)
+       key, value = i.split("\t") 
+       value = int(value)
     
-    if key == c: 
-        total += value  
-    else:
-        if c is not None:
-            sys.stdout.write("{}\t{}\n".format(c, total)) 
+       if key == c: 
+           total += value  
+       else:
+            if c is not None:
+               sys.stdout.write("{}\t{}\n".format(c, total)) 
         
-        c = key
-        total = value
+            c = key
+            total = value
 
-sys.stdout.write("{}\t{}\n".format(c, total)) 
+    sys.stdout.write("{}\t{}\n".format(c, total)) 
