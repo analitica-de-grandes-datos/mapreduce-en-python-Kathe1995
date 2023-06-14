@@ -3,10 +3,7 @@
 #
 import sys
 for row in sys.stdin:
-  elementos = row.strip()
-  elementos = elementos.split(",")
-  
-  cantidad = elementos[1]
-  letra = elementos[0]
+  cantidad = row.strip().split(",")[1]
+  letra = row.strip().split(",")[0]
   linea = letra + ";" + cantidad
   sys.stdout.write(linea+"\n")
