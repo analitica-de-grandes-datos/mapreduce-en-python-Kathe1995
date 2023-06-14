@@ -8,19 +8,19 @@ import sys
 #
 if __name__ == "__main__":
 
-    c = None
+    curkey = None
     total = 0
     for line in sys.stdin:
 
         key, value = line.split(",")
         value = int(value)
 
-        if key == c:
+        if key == curkey:
             total += value
         else:
-            if c is not None:
-                sys.stdout.write("{}\t{}\n".format(c, total))
-            c= key
+            if curkey is not None:
+                sys.stdout.write("{}\t{}\n".format(curkey, total))
+            curkey= key
             total = value
 
-    sys.stdout.write("{}\t{}\n".format(c, total))
+    sys.stdout.write("{}\t{}\n".format(curkey, total))
