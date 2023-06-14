@@ -2,25 +2,19 @@
 # >>> Escriba el codigo del reducer a partir de este punto <<<
 #
 import sys
+dict =  {}
 
-#
-# Esta funcion reduce los elementos que tienen la misma clave
-#
-if __name__ == "__main__":
+for row in sys.stdin:
+  
+  if row.strip().split(";")[0] in dict.keys():
+    dict[row.strip().split(";")[0][0]] +=  1
+    
+  else:
+    dict[row.strip().split(";")[0][0]] = 1
 
-    curkey = None
-    total = 0
-    for line in sys.stdin:
 
-        key, value = line.split(",")
-        value = int(value)
+lista = [(i,dict[i]) for i in dict.keys()]
+lista.sort(key=lambda x: x[0])
 
-        if key == curkey:
-            total += value
-        else:
-            if curkey is not None:
-                sys.stdout.write("{}\t{}\n".format(curkey, total))
-            curkey= key
-            total = value
-
-    sys.stdout.write("{}\t{}\n".format(curkey, total))
+for t in lista:
+  sys.stdout.write(str(t[0]) + "," + str(t[1]) + "\n") 
