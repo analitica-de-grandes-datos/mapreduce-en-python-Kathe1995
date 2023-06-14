@@ -2,15 +2,18 @@
 # >>> Escriba el codigo del reducer a partir de este punto <<<
 #
 import sys
-list = []
 
-for row in sys.stdin:
-  linea = row.strip()
-  linea = linea.split(";")
-  tupla = (linea[0],linea[1])
-  list.append(tupla)
-  list.sort(key=lambda x: x[1])
-for tupla in list:
-  letra = tupla[0]
-  line =  letra + "," + str(tupla[1]) + "\n"
-  sys.stdout.write(line) 
+#
+# Esta funcion reduce los elementos que tienen la misma clave
+#
+if __name__ == '__main__':
+
+    #
+    # cada linea de texto recibida es una entrada clave \tabulador valor
+    #
+    for line in sys.stdin:
+
+        lista = line.split(",")
+
+
+        sys.stdout.write("{},{}\n".format(lista[1].strip(),lista[0]))
