@@ -9,4 +9,6 @@ for row in sys.stdin:
   list.append(tupla)
   list.sort(lambda x: x[1])
 for tupla in list:
-  sys.stdout.write(tupla[0] + "," + str(tupla[1]) + "\n") 
+  letra = tupla[0]
+  line =  letra + "," + str(tupla[1]) + "\n"
+  sys.stdout.write(line) 
