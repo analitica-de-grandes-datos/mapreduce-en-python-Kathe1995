@@ -3,23 +3,29 @@
 #
 import sys
 
+#
+# Esta funcion reduce los elementos que tienen la misma clave
+#
 if __name__ == '__main__':
 
-    c = None
+    curkey = None
     total = 0
 
-    for i in sys.stdin:
-    
-       key, value = i.split("\t") 
-       value = int(value)
-    
-       if key == c: 
-           total += value  
-       else:
-            if c is not None:
-               sys.stdout.write("{}\t{}\n".format(c, total)) 
-        
-            c = key
-            total = value
+    for line in sys.stdin:
 
-    sys.stdout.write("{}\t{}\n".format(c, total)) 
+        key, val = line.split("\t")
+        val = int(val)
+
+        if key == curkey:
+      
+            total += val
+        else:
+         
+            if curkey is not None:
+         
+                sys.stdout.write("{}\t{}\n".format(curkey, total))
+
+            curkey = key
+            total = val
+
+    sys.stdout.write("{}\t{}\n".format(curkey, total))
