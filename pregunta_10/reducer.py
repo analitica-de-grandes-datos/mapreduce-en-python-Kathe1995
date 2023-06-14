@@ -1,12 +1,10 @@
 import sys 
- 
+
 if __name__ == '__main__': 
- 
     curkey = None 
     total = 0 
  
     for line in sys.stdin: 
- 
         key, val = line.split("\t") 
         val = val.strip() 
  
