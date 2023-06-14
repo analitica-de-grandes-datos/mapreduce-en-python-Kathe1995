@@ -6,19 +6,21 @@ import sys
 dict =  {}
 
 for row in sys.stdin:
-  
-  if row.strip().split(";")[0] in dict.keys():
-    dict[row.strip().split(";")[0]] +=  1
+  linea = row.strip()
+  linea = linea.split(";")
+  if linea[0] in dict.keys():
+    dict[linea[0]] +=  1
     
   else:
-     dict[row.strip().split(";")[0]] = 1
+    dict[linea[0]] = 1
 
 
 lista = [(i,dict[i]) for i in dict.keys()]
 lista.sort(key=lambda x: x[0])
 
-for t in lista:
-  sys.stdout.write(str(t[0]) + "," + str(t[1]) + "\n") 
-
+for tupla in lista:
+  
+  line =  str(tupla[0]) + "," + str(tupla[1]) + "\n"
+  sys.stdout.write(line) 
  
 
