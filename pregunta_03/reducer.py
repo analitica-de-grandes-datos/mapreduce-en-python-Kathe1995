@@ -5,8 +5,12 @@ import sys
 list = []
 
 for row in sys.stdin:
-  tupla=(row.strip().split(";")[0],row.strip().split(";")[1])
+  linea = row.strip()
+  linea = linea.split(";")
+  tupla = (linea[0],linea[1])
   list.append(tupla)
-  list.sort(lambda k: k[1])
+  list.sort(key=lambda x: x[1])
 for tupla in list:
-  sys.stdout.write(tupla[0] + "," + str(tupla[1]) + "\n") 
+  letra = tupla[0]
+  line =  letra + "," + str(tupla[1]) + "\n"
+  sys.stdout.write(line) 
