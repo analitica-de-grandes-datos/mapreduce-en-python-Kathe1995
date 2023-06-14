@@ -20,6 +20,6 @@ if __name__ == '__main__':
                 sys.stdout.write("{}\t{}\n".format(curkey, n)) 
  
             curkey = key 
-            numeros = str(int(val)) 
+            n = str(int(val)) 
  
     sys.stdout.write("{}\t{}\n".format(curkey, n))
