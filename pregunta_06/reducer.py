@@ -4,7 +4,7 @@ import sys
 if __name__ == '__main__':
 
     curkey = None
-    v_max  = 0
+    value_max  = 0
 
     for line in sys.stdin:
 
@@ -13,19 +13,19 @@ if __name__ == '__main__':
 
         if key == curkey:
        
-            if val > v_max:
-                v_max = val
-            if val < v_min:
-                v_min = val
+            if val > value_max :
+                value_max  = val
+            if val < value_min:
+                value_min = val
 
         else:
            
             if curkey is not None:
            
-                sys.stdout.write("{}\t{}\t{}\n".format(curkey, v_max, v_min))
+                sys.stdout.write("{}\t{}\t{}\n".format(curkey, value_max , value_min))
 
             curkey = key
-            v_max = val
-            v_min = val
+            value_max  = val
+            value_min = val
 
-    sys.stdout.write("{}\t{}\t{}\n".format(curkey, v_max, v_min))
+    sys.stdout.write("{}\t{}\t{}\n".format(curkey, value_max ,value_min))
