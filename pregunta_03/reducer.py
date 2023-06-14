@@ -5,9 +5,7 @@ import sys
 list = []
 
 for row in sys.stdin:
-  linea = row.strip()
-  linea = linea.split(";")
-  tupla = (linea[0],linea[1])
+  tupla = (row.strip().split(";")[0],row.strip().split(";")[1])
   list.append(tupla)
   list.sort(key=lambda x: x[1])
 for tupla in list:
