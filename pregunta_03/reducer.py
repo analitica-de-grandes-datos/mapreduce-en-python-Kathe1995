@@ -2,10 +2,11 @@
 # >>> Escriba el codigo del reducer a partir de este punto <<<
 #
 import sys
-l = []
+list = []
 
 for line in sys.stdin:
-  l.append((line.strip().split(";")[0],line.strip().split(";")[1]))
-  l.sort(key=lambda k: k[1])
-for t in l:
-  sys.stdout.write(t[0] + "," + str(t[1]) + "\n") 
+  tupla=(line.strip().split(";")[0],line.strip().split(";")[1])
+  list.append(tupla)
+  list.sort(lambda k: k[1])
+for typla in list:
+  sys.stdout.write(tupla[0] + "," + str(tupla[1]) + "\n") 
