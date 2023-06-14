@@ -30,11 +30,8 @@ if __name__ == '__main__':
             # Se cambio de clave. Se reinicia el acumulador.
             #
             if curkey is not None:
-                #
-                # una vez se han reducido todos los elementos
-                # con la misma clave se imprime el resultado en
-                # el flujo de salida
-                #
+              
+                
                 sys.stdout.write("{}\t{}\n".format(curkey, total))
 
             curkey = key
